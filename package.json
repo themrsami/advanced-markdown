@@ -1,0 +1,71 @@
+{
+  "name": "advanced-markdown",
+  "version": "1.0.0",
+  "description": "Production-ready markdown parser with Math (KaTeX), Chemistry (mhchem), and Code Highlighting - all working together flawlessly",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "markdown",
+    "parser",
+    "katex",
+    "math",
+    "chemistry",
+    "mhchem",
+    "highlight",
+    "syntax",
+    "scientific",
+    "technical",
+    "documentation"
+  ],
+  "author": {
+    "name": "Usama Nazir",
+    "email": "usamanazir13@gmail.com",
+    "url": "https://github.com/themrsami"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/themrsami/advanced-markdown.git"
+  },
+  "homepage": "https://github.com/themrsami/advanced-markdown#readme",
+  "bugs": {
+    "url": "https://github.com/themrsami/advanced-markdown/issues"
+  },
+  "dependencies": {
+    "katex": "^0.16.11",
+    "highlight.js": "^11.10.0"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/katex": "^0.16.7",
+    "@types/node": "^20.14.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

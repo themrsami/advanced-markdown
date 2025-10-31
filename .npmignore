@@ -1,0 +1,17 @@
+# Include only necessary files in npm package
+dist/
+README.md
+LICENSE
+package.json
+
+# Exclude everything else
+src/
+tsconfig.json
+tsup.config.ts
+jest.config.js
+.gitignore
+.github/
+tests/
+examples/
+*.test.ts
+*.spec.ts
