@@ -4,8 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/advanced-markdown)](https://www.npmjs.com/package/advanced-markdown)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/npm/l/advanced-markdown)](LICENSE)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/advanced-markdown)](https://bundlephobia.com/package/advanced-markdown)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ✨ **[Try it Live](https://www.markdowntopdf.tech)** - Experience advanced-markdown in action!
 
@@ -85,10 +84,8 @@ const html = parse(markdown, {
 'use client'; // For Next.js 13+
 
 import { parse } from 'advanced-markdown';
-import 'katex/dist/katex.min.css'; // Required for math rendering
-import 'highlight.js/styles/github-dark.css'; // Optional: syntax highlighting theme
 
-export default function MarkdownRenderer({ content }) {
+export default function MarkdownRenderer({ content }: { content: string }) {
   const html = parse(content);
   
   return (
