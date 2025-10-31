@@ -1,6 +1,6 @@
 {
   "name": "advanced-markdown",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Production-ready markdown parser with Math (KaTeX), Chemistry (mhchem), and Code Highlighting - all working together flawlessly",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
