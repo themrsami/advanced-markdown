@@ -360,15 +360,17 @@ export function parse(markdown: string, options: ParseOptions = {}): string {
     // Check for task list items
     const taskListMatch = trimmedLine.match(/^[-*]\s\[([ xX])\]\s(.*)$/);
     
+    // Check for unordered list first (before emoji to avoid conflicts)
+    const unorderedMatch = trimmedLine.match(/^[-*]\s(.*)$/);
+    
     // Check for emoji bullets (emoji followed by space)
     // Use \p{Emoji} Unicode property to match any emoji
-    const emojiMatch = trimmedLine.match(/^(\p{Emoji}(?:\uFE0F)?)\s+(.+)$/u);
+    const emojiMatch = !unorderedMatch ? trimmedLine.match(/^(\p{Emoji}(?:\uFE0F)?)\s+(.+)$/u) : null;
     
     const numericMatch = trimmedLine.match(/^(\d+)\.\s(.*)$/);
     const letterLowerMatch = trimmedLine.match(/^([a-z])\.\s(.*)$/);
     const letterUpperMatch = trimmedLine.match(/^([A-Z])\.\s(.*)$/);
     const romanLowerMatch = trimmedLine.match(/^(i{1,3}|iv|v|vi{0,3}|ix|x)\.\s(.*)$/i);
-    const unorderedMatch = trimmedLine.match(/^[-*]\s(.*)$/);
 
     if (taskListMatch || emojiMatch || numericMatch || letterLowerMatch || letterUpperMatch || romanLowerMatch || unorderedMatch) {
       // Close any open blockquotes
